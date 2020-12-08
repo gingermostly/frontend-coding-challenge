@@ -4,9 +4,11 @@
 * Choose technologies/libraries
 * Come up with testing plan
 * Set up basic "Hello World" app using React
-* Set up index page with HTML/CSS Grid based on mockups provided
-* Create search box and button for searching username
+* Create submit button for getting repos
+  * setup git api and make sure basic request is working
+
 * Add pagination functionality on page scroll
+* style using css grid based on mockups
 * Error handling and testing
 * Code cleanup/commenting
 * README

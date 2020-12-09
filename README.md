@@ -1,6 +1,11 @@
 # Front-end Coding Challenge
 
-## Installation
+## Getting started
+* To install dependencies:
+`Yarn install`
+
+* To run webpack dev server:
+`Yarn start`
 
 ## Technologies used
 * React

@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
-body {
+body, html {
     background-color: aqua;
     font-family: 'Roboto Mono', monospace;
+    height: 100%;
+    margin: 0px;
+}
+
+.scroll-container {
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 .container {

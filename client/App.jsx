@@ -2,6 +2,12 @@ import React from 'react';
 import './styles.css';
 import axios from 'axios';
 
+const getCurrent = new Date();
+
+const pastThirty = new Date().setDate(getCurrent.getDate() - 30);
+
+const searchDate = new Date(pastThirty).toISOString().slice(0, 10);
+
 class App extends React.Component {
     constructor(props){
         super(props);
@@ -11,7 +17,7 @@ class App extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick() {
-        axios.get('https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc')
+        axios.get(`https://api.github.com/search/repositories?q=created:>${searchDate}&sort=stars&order=desc`)
             .then(res => {
                 this.setState({
                     data: res.data.items
@@ -25,6 +31,7 @@ class App extends React.Component {
                 GET REPOS
             </button>
             {this.state.data.map(item => {
+                console.log(this.state.data)
                 return (
                 <div className='container'>
                     <img src={item.owner.avatar_url}/>

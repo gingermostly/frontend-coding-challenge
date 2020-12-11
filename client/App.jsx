@@ -17,7 +17,7 @@ class App extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick() {
-        axios.get(`https://api.github.com/search/repositories?q=created:>${searchDate}&sort=stars&order=desc`)
+        axios.get(`https://api.github.com/search/repositories?q=created:>${searchDate}&sort=stars&order=desc&page=1&per_page=50`)
             .then(res => {
                 this.setState({
                     data: res.data.items

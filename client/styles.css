@@ -14,22 +14,35 @@ body, html {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+    margin: 10px 15px 10px 15px;
+    grid-template-columns: repeat(5, 1fr);
     column-gap: 2rem;
-    justify-items: center;
     background: red;
 }
 
-img {
+.avatar {
+    background-color: blueviolet;
+    justify-self: center;
+}
+
+.avatar img {
     max-height: 100px;
     max-width: 100px;
 }
 
 .repo-wrapper {
     display: grid;
+    background-color: cornsilk;
 }
 
 .title {
+    word-wrap: break-word;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
+    background-color: chartreuse;
+    max-width: 200px;
+}
+
+.description {
+    font-size: 12px;
 }

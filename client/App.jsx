@@ -16,11 +16,10 @@ class App extends React.Component {
         this.state = {
             data: []
         }
-        this.handleClick = this.handleClick.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
     }
-    handleClick() {
-        axios.get(`https://api.github.com/search/repositories?q=created:>${searchDate}&sort=stars&order=desc&page=${currentPage}&per_page=50`)
+    componentDidMount() {
+        axios.get(`https://api.github.com/search/repositories?q=created:>${searchDate}&sort=stars&order=desc&page=${currentPage}&per_page=25`)
             .then(res => {
                 this.setState({
                     data: res.data.items
@@ -44,13 +43,10 @@ class App extends React.Component {
     render () {
         return (
         <div className='scroll-container' onScroll={this.handleScroll}>
-            <button onClick={this.handleClick}>
-                GET REPOS
-            </button>
             {this.state.data.map(item => {
                 return (
                 <div className='container'>
-                    <img src={item.owner.avatar_url}/>
+                    <div className='avatar'><img src={item.owner.avatar_url}/></div>
                     <div className='repo-wrapper'>
                         <div className='title'>{item.name}</div>
                         <div className='description'>{item.description}</div>

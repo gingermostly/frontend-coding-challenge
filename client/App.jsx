@@ -8,7 +8,7 @@ const pastThirty = new Date().setDate(getCurrent.getDate() - 30);
 
 const searchDate = new Date(pastThirty).toISOString().slice(0, 10);
 
-const currentPage = 1;
+let currentPage = 1;
 
 class App extends React.Component {
     constructor(props){
@@ -32,7 +32,13 @@ class App extends React.Component {
         let top = e.target.scrollTop;
         let client = e.target.clientHeight;
         if (height - top === client) {
-            console.log('end of page!')
+            currentPage++;
+            axios.get(`https://api.github.com/search/repositories?q=created:>${searchDate}&sort=stars&order=desc&page=${currentPage}&per_page=50`)
+            .then(res => {
+                this.setState({
+                    data: this.state.data.concat(res.data.items)
+                })   
+            })
         }
     }
     render () {

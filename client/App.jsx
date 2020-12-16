@@ -58,6 +58,7 @@ class App extends React.Component {
         return (
         <div className='scroll-container' onScroll={this.handleScroll}>
             {this.state.data.map(item => {
+                console.log(item)
                 // get repo creation date
                 let createdDate = new Date(item.created_at);
                 // get difference betweeen dates in milliseconds
@@ -65,20 +66,22 @@ class App extends React.Component {
                 // convert milliseconds to days to get number of days since creation date to current date
                 let timeInterval = Math.floor(milliseconds / (1000 * 3600 * 24));
                 return (
-                <div className='container'>
-                    <div className='avatar'><img src={item.owner.avatar_url} /></div>
+                <div className='container' key={item.id}>
+                    <div className='avatar'>
+                        <img src={item.owner.avatar_url} />
+                    </div>
                     <div className='repo-wrapper'>
                         <div className='title'>{item.name}</div>
                         <div className='description'>{item.description}
                             <a href={item.html_url} target='_blank'>{item.html_url}</a>
-                    </div>
+                        </div>
                     <div className='details-wrapper'>
                         <div className='btn-style'>Stars: {convertNum(item.stargazers_count)}</div>
                         {/* should issues include all issues or just current open issues? Included only open issues for now as a separate issues API would need to be utilized to get all issues and would involve some code refactoring to include
                          */}
                         <div className='btn-style'>Issues: {convertNum(item.open_issues)}</div>
-                        <div className='user'>Submitted {timeInterval} days ago by {item.owner.login}</div>
-                        </div>
+                        <div className='user'>Submitted {timeInterval} days ago by <a href={item.owner.html_url} target='_blank'>{item.owner.login}</a></div>
+                    </div>
                     </div>
                 </div>
                 )

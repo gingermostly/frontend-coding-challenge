@@ -49,11 +49,14 @@ body, html {
     padding: 5px;
 }
 
-.description a {
-    margin-left: 10px;
+.description a, .user a {
     text-decoration: none;
     font-weight: 600;
     color: rgb(39, 145, 145);
+}
+
+.description a {
+    margin-left: 10px;
 }
 
 .details-wrapper {

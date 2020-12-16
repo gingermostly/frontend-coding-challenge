@@ -50,11 +50,13 @@ class App extends React.Component {
                     <div className='repo-wrapper'>
                         <div className='title'>{item.name}</div>
                         <div className='description'>{item.description}</div>
+                        <div className='details-wrapper'>
+                        <div className='btn-style'>Stars: {item.stargazers_count}</div>
+                        {/* should issues include all issues or just current open issues? */}
+                        <div className='btn-style'>Issues: {item.open_issues}</div>
+                        <div className='user'>Submitted 30 days ago by {item.owner.login}</div>
+                        </div>
                     </div>
-                    <div># of stars: {item.stargazers_count}</div>
-                    {/* should issues include all issues or just current open issues? */}
-                    <div># of issues: {item.open_issues}</div>
-                    <div>GitHub Username: {item.owner.login}</div>
                 </div>
                 )
             })}

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
 body, html {
-    background-color: aqua;
+    background-color: #eee;
     font-family: 'Roboto Mono', monospace;
     height: 100%;
     margin: 0px;
@@ -13,36 +13,56 @@ body, html {
 }
 
 .container {
-    display: grid;
+    display: flex;
+    padding: 15px;
     margin: 10px 15px 10px 15px;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 2rem;
-    background: red;
 }
 
 .avatar {
-    background-color: blueviolet;
-    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    padding: 15px;
 }
 
 .avatar img {
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 150px;
+    max-width: 150px;
+    border: 1px solid black;
 }
 
 .repo-wrapper {
     display: grid;
-    background-color: cornsilk;
 }
 
 .title {
     word-wrap: break-word;
     font-weight: 600;
-    font-size: 18px;
-    background-color: chartreuse;
-    max-width: 200px;
+    font-size: 25px;
+    padding: 10px;
 }
 
 .description {
-    font-size: 12px;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.details-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.btn-style {
+    background-color: darkturquoise;
+    font-size: 14px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.user {
+    font-size: 14px;
+    padding: 5px;
+    margin: 5px;
 }

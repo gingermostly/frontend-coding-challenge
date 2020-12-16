@@ -35,10 +35,10 @@ body, html {
 
 .repo-wrapper {
     display: grid;
+    align-content: center;
 }
 
 .title {
-    word-wrap: break-word;
     font-weight: 600;
     font-size: 25px;
     padding: 10px;

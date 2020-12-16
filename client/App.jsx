@@ -44,7 +44,7 @@ class App extends React.Component {
         let height = e.target.scrollHeight;
         let top = e.target.scrollTop;
         let client = e.target.clientHeight;
-        if (height - top === client) {
+        if ((height - top) - client <= 150) {
             currentPage++;
             axios.get(`https://api.github.com/search/repositories?q=created:>${searchDate}&sort=stars&order=desc&page=${currentPage}&per_page=50`)
             .then(res => {
@@ -66,13 +66,13 @@ class App extends React.Component {
                 let timeInterval = Math.floor(milliseconds / (1000 * 3600 * 24));
                 return (
                 <div className='container'>
-                    <div className='avatar'><img src={item.owner.avatar_url}/></div>
+                    <div className='avatar'><img src={item.owner.avatar_url} /></div>
                     <div className='repo-wrapper'>
                         <div className='title'>{item.name}</div>
                         <div className='description'>{item.description}
                             <a href={item.html_url} target='_blank'>{item.html_url}</a>
-                        </div>
-                        <div className='details-wrapper'>
+                    </div>
+                    <div className='details-wrapper'>
                         <div className='btn-style'>Stars: {convertNum(item.stargazers_count)}</div>
                         {/* should issues include all issues or just current open issues? Included only open issues for now as a separate issues API would need to be utilized to get all issues and would involve some code refactoring to include
                          */}

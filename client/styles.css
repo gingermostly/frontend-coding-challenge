@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
 body, html {
-    background-color: #eee;
+    background-color: rgb(223, 141, 188);
     font-family: 'Roboto Mono', monospace;
     height: 100%;
     margin: 0px;
@@ -15,7 +15,8 @@ body, html {
 .container {
     display: flex;
     padding: 15px;
-    margin: 10px 15px 10px 15px;
+    background-color: #eee;
+    margin: 15px;
 }
 
 .avatar {

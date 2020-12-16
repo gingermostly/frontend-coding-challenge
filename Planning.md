@@ -10,7 +10,7 @@
 * Add pagination functionality on page scroll
 * style using css grid based on mockups
 
-## To-Do
+## Tech debt
 
 * Error handling and testing
 * Code cleanup/commenting
@@ -18,6 +18,8 @@
 * update README
 * Update Submitted XX days ago to calculate based on created date
 * Update issues to display all issues instead of just currently open issues (since this seems to match what is in mockup)
+* Add keys to list items
+* make owner name link to owner url
 
 * tests
   * should bring up list of repos for user searched

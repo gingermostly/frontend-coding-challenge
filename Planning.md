@@ -9,10 +9,15 @@
   * Edit to get data based on today's date
 * Add pagination functionality on page scroll
 * style using css grid based on mockups
+
+## To-Do
+
 * Error handling and testing
 * Code cleanup/commenting
   * Check variable names are clear, change/update if needed
-* README
+* update README
+* Update Submitted XX days ago to calculate based on created date
+* Update issues to display all issues instead of just currently open issues (since this seems to match what is in mockup)
 
 * tests
   * should bring up list of repos for user searched

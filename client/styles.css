@@ -48,17 +48,23 @@ body, html {
     padding: 5px;
 }
 
+.description a {
+    margin-left: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(39, 145, 145);
+}
+
 .details-wrapper {
     display: flex;
     align-items: center;
 }
 
 .btn-style {
-    background-color: darkturquoise;
+    background-color: rgb(92, 232, 235);
     font-size: 14px;
     padding: 5px;
     margin: 5px;
-    border: 1px solid black;
 }
 
 .user {
@@ -66,3 +72,4 @@ body, html {
     padding: 5px;
     margin: 5px;
 }
+

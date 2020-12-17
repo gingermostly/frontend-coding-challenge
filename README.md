@@ -20,6 +20,8 @@
 * Refactoring to improve performance and prevent waiting for results to load when scrolling
 * Install Jest for more extensive testing of functionality
 * Additional features like allowing user to sort results or search descriptions, maybe add the ability to enter a date so user can choose the specific number of past days to display instead of just defaulting to past 30 days
+* Create mobile responsive layouts for smaller screen sizes
+* Better error handling when GitHub API rate limit exceeded
 
 ## GitHub API
 

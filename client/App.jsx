@@ -39,6 +39,11 @@ class App extends React.Component {
                     data: res.data.items
             })
         })
+        .catch(err => {
+            if (err.res) {
+                console.log(err)
+            }
+        })
     }
     handleScroll(e) {
         let height = e.target.scrollHeight;
@@ -52,13 +57,17 @@ class App extends React.Component {
                     data: this.state.data.concat(res.data.items)
                 })   
             })
+            .catch(err => {
+                if (err.res) {
+                    console.log(err.res)
+                }
+            })
         }
     }
     render () {
         return (
         <div className='scroll-container' onScroll={this.handleScroll}>
             {this.state.data.map(item => {
-                console.log(item)
                 // get repo creation date
                 let createdDate = new Date(item.created_at);
                 // get difference betweeen dates in milliseconds
@@ -66,7 +75,7 @@ class App extends React.Component {
                 // convert milliseconds to days to get number of days since creation date to current date
                 let timeInterval = Math.floor(milliseconds / (1000 * 3600 * 24));
                 return (
-                <div className='container' key={item.id}>
+                <div className='container' key={item.node_id}>
                     <div className='avatar'>
                         <img src={item.owner.avatar_url} />
                     </div>

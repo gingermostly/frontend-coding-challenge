@@ -1,19 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
 body, html {
-    background-color: rgb(223, 141, 188);
+    background-color: rgb(68, 68, 68);
     font-family: 'Roboto Mono', monospace;
     height: 100%;
     margin: 0px;
+    color: rgb(84, 84, 84);
 }
 
 .scroll-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-height: 100vh;
     overflow-y: auto;
 }
 
 .container {
     display: flex;
+    width: 80%;
     padding: 15px;
     background-color: #eee;
     margin: 15px;
